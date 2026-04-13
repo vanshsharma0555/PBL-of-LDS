@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Management App</title>
+    <title>Student Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-    <h1>🎓 Student Management</h1>
-
-    <div class="card form-card">
-        <h2>Add / Update Student</h2>
-        <div class="form">
-            <input type="number" id="id" placeholder="Student ID">
-            <input type="text" id="name" placeholder="Full Name">
-            <input type="number" id="marks" placeholder="Marks">
-            <button onclick="addOrUpdateStudent()">Save Student</button>
-        </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>🎓 App</h2>
+        <ul>
+            <li class="active">Students</li>
+            <li>Dashboard</li>
+        </ul>
     </div>
 
-    <div class="card">
-        <div class="top-bar">
-            <h2>Student Records</h2>
-            <input type="text" id="search" placeholder="🔍 Search by name..." onkeyup="searchStudent()">
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Top Bar -->
+        <div class="topbar">
+            <h2>Student Management</h2>
+            <button onclick="openModal()">+ Add Student</button>
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Marks</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody"></tbody>
-        </table>
-    </div>
+        <!-- Search -->
+        <input type="text" id="search" placeholder="Search students..." onkeyup="searchStudent()">
 
+        <!-- Table Card -->
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3>Add / Edit Student</h3>
+        <input type="number" id="id" placeholder="ID">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="marks" placeholder="Marks">
+        <button onclick="addOrUpdateStudent()">Save</button>
+        <button onclick="closeModal()" class="cancel">Cancel</button>
+    </div>
 </div>
 
 <script src="script.js"></script>
