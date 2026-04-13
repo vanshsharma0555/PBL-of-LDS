@@ -7,28 +7,38 @@
 <body>
 
 <div class="container">
-    <h1>Student Management System</h1>
 
-    <div class="form">
-        <input type="number" id="id" placeholder="ID">
-        <input type="text" id="name" placeholder="Name">
-        <input type="number" id="marks" placeholder="Marks">
-        <button onclick="addOrUpdateStudent()">Save</button>
+    <h1>🎓 Student Management</h1>
+
+    <div class="card form-card">
+        <h2>Add / Update Student</h2>
+        <div class="form">
+            <input type="number" id="id" placeholder="Student ID">
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="number" id="marks" placeholder="Marks">
+            <button onclick="addOrUpdateStudent()">Save Student</button>
+        </div>
     </div>
 
-    <input type="text" id="search" placeholder="Search by name..." onkeyup="searchStudent()">
+    <div class="card">
+        <div class="top-bar">
+            <h2>Student Records</h2>
+            <input type="text" id="search" placeholder="🔍 Search by name..." onkeyup="searchStudent()">
+        </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Marks</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
