@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Management System</h1>
+
+    <div class="form">
+        <input type="number" id="id" placeholder="ID">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="marks" placeholder="Marks">
+        <button onclick="addOrUpdateStudent()">Save</button>
+    </div>
+
+    <input type="text" id="search" placeholder="Search by name..." onkeyup="searchStudent()">
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Marks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
